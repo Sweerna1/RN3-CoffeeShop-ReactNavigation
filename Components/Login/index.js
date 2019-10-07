@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+//import AppContainer from "./Navigation/AppContainer";
+
 // NativeBase Components
 import {
   Text,
@@ -15,7 +17,7 @@ import {
   Header
 } from "native-base";
 
-const Login = () => {
+const Login = props => {
   return (
     <Content>
       <Header transparent />
@@ -49,13 +51,29 @@ const Login = () => {
             </Form>
           </Body>
         </ListItem>
-        <Button full success>
+        <Button
+          full
+          success
+          onPress={() => props.navigation.replace("ListScreen")}
+        >
           <Text>Login</Text>
         </Button>
-        <Button full warning>
+        <Button
+          full
+          warning
+          onPress={() => props.navigation.replace("ListScreen")}
+        >
           <Text>Register</Text>
         </Button>
+        <Button
+          full
+          warning
+          onPress={() => props.navigation.navigate("ProfileScreen")}
+        >
+          <Text>Profile</Text>
+        </Button>
       </List>
+
       <Body>
         <Label style={{ color: "red", opacity: 0.6 }} />
       </Body>
